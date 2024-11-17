@@ -5,9 +5,12 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import pages from './page.style'
 import uidata from "../constants/uidata";
 import { UserReversedGeoCode } from '../context/UserReversedGeoCode';
+import { UserLocationContext } from "../context/UserLocationContext";
 
 const Home = () => {
   const {address, setAddress} = useContext(UserReversedGeoCode);
+  console.log(address)
+  const {location, setLocation} = useContext(UserLocationContext );
   console.log(address)
   return (
     <SafeAreaView>

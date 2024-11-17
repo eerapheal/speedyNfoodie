@@ -14,6 +14,7 @@ import { UserReversedGeoCode } from "./app/context/UserReversedGeoCode";
 export default function App() {
   const [location, setLocation] = useState(null);
   const [address, setAddress] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
 
   const defaultAddresss = {
     city: "Lagos",
@@ -43,7 +44,18 @@ export default function App() {
     }
   }, [fontsLoaded]);
   useEffect(() => {
-    setAddress(defaultAddresss);
+    (async () => {
+      setAddress(defaultAddresss);
+      let { status } = await Location.requestForegroundPermissionsAsync();
+
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location denied");
+        return;
+      }
+      let location = await Location.getCurrentPositionAsync({});
+      setLocation(location);
+      console.log(location)
+    })();
   }, []);
 
   if (!fontsLoaded) {
