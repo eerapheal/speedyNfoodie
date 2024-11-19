@@ -5,30 +5,30 @@ const categories = [
         "_id": "6537ece708ff5b7de97d0695",
         "title": "Fried Rice",
         "value": "fried_rice",
-        "imageUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/4a4cd06e-94de-4478-8588-66eee01354d4-rice.png",
+        "imageUrl": "https://www.pngmart.com/files/17/Fried-Rice-PNG-File.png",
         "createdAt": "2023-10-24T16:12:23.571Z",
         "updatedAt": "2023-10-24T16:12:23.571Z",
         "__v": 0
     },
     {
         "_id": "65310f3381e4d98d60b093c5",
-        "title": "Curry",
-        "value": "curry",
-        "imageUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/ee2d952c-1d7d-48f7-81b3-cb967343eb6c-curry.png",
+        "title": "Jollof",
+        "value": "jollof",
+        "imageUrl": "https://th.bing.com/th/id/R.ea1f28b089c51b4421d38a3ac3308adb?rik=NbRzU5pystawhg&riu=http%3a%2f%2fajinomoto.com.ng%2fwp-content%2fuploads%2f2015%2f05%2fjollof-rice.png&ehk=XcWhh%2b8wSDLqpSfm0XjE%2fcZ%2bEho6Tub8lh8PxBH2PlY%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1",
         "__v": 0
     },
     {
         "_id": "6531206cbbe4998e90af3feb",
         "title": "Pizza",
         "value": "pizza",
-        "imageUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/466693e6-f999-42e0-8794-09325ece1b45-Pizza.png",
+        "imageUrl": "https://static.vecteezy.com/system/resources/previews/035/575/148/non_2x/ai-generated-pizza-with-mushrooms-and-cheese-on-transparent-background-image-png.png",
         "__v": 0
     },
     {
         "_id": "6531209dbbe4998e90af3fef",
-        "title": "Pasta",
-        "value": "pasta",
-        "imageUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/6645cf41-bc89-4dd0-9f80-bba9487633b2-Spaghetti.png",
+        "title": "FUfu",
+        "value": "fufo",
+        "imageUrl": "https://th.bing.com/th/id/OIP.s19-PZtkeqF9h3E36p7ZDQHaE8?w=1200&h=800&rs=1&pid=ImgDetMain",
         "__v": 0
     },
     {
