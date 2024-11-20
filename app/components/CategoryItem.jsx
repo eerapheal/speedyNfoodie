@@ -5,7 +5,7 @@ const CategoryItem = ({ category, isSelected }) => {
   return (
     <View
       style={{
-        backgroundColor: isSelected ? COLORS.gray : COLORS.lightWhite,
+        backgroundColor: isSelected ? COLORS.secondary : COLORS.lightWhite,
         marginLeft: 12,
         padding: 5,
         alignItems: 'center',
@@ -25,7 +25,12 @@ const CategoryItem = ({ category, isSelected }) => {
           height: 30,
         }}
       />
-      <Text style={{ fontSize: 13, fontFamily: 'regular' }}>{category.title}</Text>
+      <Text style={{
+        fontSize: 13, fontFamily: 'regular',
+        color: isSelected ? COLORS.lightWhite : COLORS.black,
+        fontWeight: isSelected ? 'bold' : 'normal'
+
+      }}>{category.title}</Text>
     </View>
   );
 };
