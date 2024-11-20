@@ -9,13 +9,14 @@ import { UserLocationContext } from "../context/UserLocationContext";
 import HomeHeader from "../components/HomeHeader";
 import ChoiceList from "../components/ChoiceList";
 import CategoryList from "../components/CategoryList";
+import Heading from "../components/Heading";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSection, setSelectedSection] = useState(null);
   const [selectedValue, setSelectedValue] = useState(null);
   const [selectedChoice, setSelectChoice] = useState(null);
-console.log(setSelectedValue)
+
   return (
     <SafeAreaView>
       <View style={pages.viewOne}>
@@ -35,6 +36,13 @@ console.log(setSelectedValue)
               setSelectedChoice={setSelectChoice}
               setSelectedSection={setSelectedSection}
             />
+
+            <View>
+              <Heading
+                heading={'Nearby restaurants'}
+                onPress={() => { }}
+              />
+            </View>
           </ScrollView>
         </View>
       </View>
