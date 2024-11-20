@@ -1,11 +1,12 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import uidata from '../constants/uidata'
+import StoreComponent from './StoreComponent'
 
 const NearbyRestaurants = () => {
-  console.log(uidata?.restaurants)
+
   return (
-    <View style={{ marginLeft: 12, marginTop: 10 }}>
+    <View style={{ marginLeft: 10, marginTop: 8 }}>
       <FlatList
         data={uidata?.restaurants}
         horizontal
@@ -13,7 +14,7 @@ const NearbyRestaurants = () => {
         style={{ marginTop: 5, rowGap: 10 }}
         scrollEnabled
         renderItem={({ item }) => (
-          <Text>{item?.title}</Text>
+          <StoreComponent item={item} onPress={() =>{}}/>
         )}
       />
     </View>

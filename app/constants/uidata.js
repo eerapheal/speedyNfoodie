@@ -66,7 +66,7 @@ const restaurants = [
         "_id": "6530ebbcc9e72013e5b65933",
         "title": "Lapisara Eatery",
         "time": "15 min",
-        "imageUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
+        "imageUrl": "https://www.pngmart.com/files/17/Fried-Rice-PNG-File.png",
         "owner": "fdfsdfsdfs",
         "code": "41007428",
         "logoUrl": "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp",
