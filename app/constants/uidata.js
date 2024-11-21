@@ -193,7 +193,7 @@ const foods = [
             }
         ],
         "imageUrl": [
-            "https://d326fntlu7tb1e.cloudfront.net/uploads/5c2a9ca8-eb07-400b-b8a6-2acfab2a9ee2-image001.webp"
+            "https://static.vecteezy.com/system/resources/previews/035/575/148/non_2x/ai-generated-pizza-with-mushrooms-and-cheese-on-transparent-background-image-png.png"
         ],
         "__v": 0,
         "category": "6531209dbbe4998e90af3fef",

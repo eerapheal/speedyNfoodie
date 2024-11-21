@@ -21,7 +21,7 @@ export default Heading
 const styles = StyleSheet.create({
   heading: {
     flexDirection: 'row',
-    marginTop: 15,
+    marginTop: 8,
     marginBottom: 7,
     justifyContent: 'space-between',
     marginRight: 16,

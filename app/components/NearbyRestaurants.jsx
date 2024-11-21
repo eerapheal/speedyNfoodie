@@ -6,7 +6,7 @@ import StoreComponent from './StoreComponent'
 const NearbyRestaurants = () => {
 
   return (
-    <View style={{ marginLeft: 10, marginTop: 8 }}>
+    <View style={{ marginLeft: 10, marginTop: 5 }}>
       <FlatList
         data={uidata?.restaurants}
         horizontal
