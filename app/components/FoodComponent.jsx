@@ -6,7 +6,7 @@ import NetworkImage from './NetworkImage'
 const FoodComponent = ({ item, onPress }) => {
 
   return (
-    <TouchableOpacity style={styles.wrapper}>
+    <TouchableOpacity style={styles.wrapper} onPress={onPress}>
       <NetworkImage
         data={item?.imageUrl[0]}
         width={SIZES.width - 80}
