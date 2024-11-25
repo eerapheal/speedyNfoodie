@@ -8,7 +8,7 @@ const NewFoodList = () => {
   const navigation = useNavigation();
 
   const renderItem = ({ item }) => (
-    <FoodComponent item={item} onPress={() => navigation.navigate("food-nav", item)} />
+    <FoodComponent item={item} onPress={() => navigation.navigate("food-nav", {item})} />
   )
   return (
     <View style={{ marginLeft: 12, marginBottom: 10 }}>
