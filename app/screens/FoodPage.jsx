@@ -1,6 +1,8 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React, { useContext, useState } from 'react'
 import { CartCountContext } from '../context/CartCountContext';
+import { COLORS, SIZES } from '../constants/theme';
+import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
 
 const FoodPage = ({ route, navigation }) => {
   const item = route.params.item;
@@ -10,15 +12,46 @@ const FoodPage = ({ route, navigation }) => {
   const [restaurant, setRestaurant] = useState(1);
   const [count, setCount] = useState(1);
   const [preferences, setPreferences] = useState('');
-  const { cartCount, setCartCount } = useContext(CartCountContext);
+  // const { cartCount, setCartCount } = useContext(CartCountContext);
 
   return (
-    <View>
-      <Text>FoodPage</Text>
+    <View style={{ backgroundColor: COLORS.lightWhite, height: SIZES.height }}>
+      <View>
+        <Image
+          source={{ uri: item?.imageUrl[0] }}
+          style={{ width: SIZES.width, height: SIZES.height / 4, borderBottomRightRadius: 30 }}
+        />
+        <TouchableOpacity onPress={() => navigation.goBack()}
+          style={styles.backBtn}
+        >
+          <Ionicons name='chevron-back-circle' size={40} color={COLORS.primary} />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => { }}
+          style={styles.shareBtn}
+        >
+          <MaterialCommunityIcons name='share-circle' size={40} color={COLORS.primary} />
+        </TouchableOpacity>
+      </View>
     </View>
   )
 }
 
 export default FoodPage
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  backBtn: {
+    marginLeft: 12,
+    alignItems: 'center',
+    zIndex: 999,
+    position: 'absolute',
+    top: SIZES.xxLarge,
+  },
+  shareBtn: {
+    marginRight: 12,
+    alignItems: 'center',
+    right: 0,
+    zIndex: 999,
+    position: 'absolute',
+    top: SIZES.xxLarge,
+  }
+})
