@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native'
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { CartCountContext } from '../context/CartCountContext';
 import { COLORS, SIZES } from '../constants/theme';
 import { Ionicons, MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
@@ -16,7 +16,7 @@ const FoodPage = ({ route, navigation }) => {
   const [count, setCount] = useState(1);
   const [preference, setPreference] = useState('');
   // const { cartCount, setCartCount } = useContext(CartCountContext);
-  console.log(additives)
+
   const handleAdditives = (newAdditive) => {
     setAdditives((prevAdditives) => {
       const exists = prevAdditives.some((additive) => additive.id === newAdditive.id);
@@ -26,6 +26,17 @@ const FoodPage = ({ route, navigation }) => {
         return [...prevAdditives, newAdditive];
       }
     })
+  }
+
+  useEffect(() => {
+    calculateAdditivePrice();
+  }, [additives]);
+
+  const calculateAdditivePrice = () => {
+    const total = additives.reduce((sum, additive) => {
+      return sum + parseFloat(additive.price);
+    }, 0)
+    setTotalPrice(total);
   }
   return (
     <View style={{ backgroundColor: COLORS.lightWhite, height: SIZES.height }}>
