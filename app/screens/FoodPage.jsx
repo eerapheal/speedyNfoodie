@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'reac
 import React, { useContext, useState } from 'react'
 import { CartCountContext } from '../context/CartCountContext';
 import { COLORS, SIZES } from '../constants/theme';
-import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { Ionicons, MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 import { FlatList } from 'react-native-web';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 import Counter from '../components/Counter';
@@ -84,7 +84,7 @@ const FoodPage = ({ route, navigation }) => {
             </View>
           )}
         />
-        <Text style={[styles.title, { marginBottom: 5, marginTop: 20 }]}>Preferences</Text>
+        <Text style={[styles.title, { marginBottom: 7, marginTop: 7 }]}>Preferences</Text>
         <View style={styles.input}>
           <TextInput
             style={{ flex: 1, borderWidth: "none" }}
@@ -99,7 +99,29 @@ const FoodPage = ({ route, navigation }) => {
           <Text style={[styles.title, { marginBottom: 10 }]}>
             Quantity
           </Text>
-          <Counter count={count} setCount={setCount}/>
+          <Counter count={count} setCount={setCount} />
+        </View>
+      </View>
+      <View style={{ left: 10, top: 40 }}>
+        <View style={{ flex: 1, justifyContent: "flex-end" }}>
+          <View style={styles.suspended}>
+            <View style={styles.cart}>
+              <View style={styles.cartRow}>
+                <TouchableOpacity onPress={() => { }} style={styles.cartBtn}>
+                  <AntDesign name='pluscircleo' color={COLORS.lightWhite} size={20} />
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => navigation.navigate("order-page")} style={{ backgroundColor: COLORS.primary, paddingHorizontal: 80, borderRadius: 30 }}>
+                  <Text style={[styles.title, { color: COLORS.lightWhite, marginTop: 4, alignItems: "center" }]}>Order</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity onPress={() => { }} style={styles.cartBtn}>
+                  <Text style={[styles.title, { color: COLORS.lightWhite, marginTop: 3, alignItems: "center" }]}>0</Text>
+                </TouchableOpacity>
+
+              </View>
+            </View>
+          </View>
         </View>
       </View>
     </View>
@@ -161,5 +183,34 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     flexDirection: 'row',
     backgroundColor: COLORS.offwhite,
-  }
+  },
+  suspended: {
+    position: "absolute",
+    zIndex: 999,
+    bottom: -15,
+    width: "100%",
+    alignItems: "center",
+  },
+  cart: {
+    width: SIZES.width - 24,
+    height: 60,
+    justifyContent: "center",
+    marginHorizontal: 20,
+    backgroundColor: COLORS.primary1,
+    borderRadius: 30,
+  },
+  cartRow: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginHorizontal: 12
+  },
+  cartBtn: {
+    width: 40,
+    height: 40,
+    backgroundColor: COLORS.primary,
+    borderRadius: 90,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+
 })
