@@ -16,7 +16,17 @@ const FoodPage = ({ route, navigation }) => {
   const [count, setCount] = useState(1);
   const [preference, setPreference] = useState('');
   // const { cartCount, setCartCount } = useContext(CartCountContext);
-
+  console.log(additives)
+  const handleAdditives = (newAdditive) => {
+    setAdditives((prevAdditives) => {
+      const exists = prevAdditives.some((additive) => additive.id === newAdditive.id);
+      if (exists) {
+        return prevAdditives.filter((additive) => additive.id !== newAdditive.id);
+      } else {
+        return [...prevAdditives, newAdditive];
+      }
+    })
+  }
   return (
     <View style={{ backgroundColor: COLORS.lightWhite, height: SIZES.height }}>
       <View>
@@ -79,6 +89,7 @@ const FoodPage = ({ route, navigation }) => {
                 fillColor={COLORS.primary}
                 innerIconStyle={styles.small}
                 text={item.title}
+                onPress={() => { handleAdditives(item) }}
               />
               <Text style={styles.small}>₦{item.price}</Text>
             </View>
