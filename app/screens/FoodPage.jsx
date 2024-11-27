@@ -31,6 +31,22 @@ const FoodPage = ({ route, navigation }) => {
         >
           <MaterialCommunityIcons name='share-circle' size={40} color={COLORS.primary} />
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => { }}
+          style={{ position: 'absolute', bottom: 20, right: 3 }}
+        >
+          <View style={styles.restBtn}>
+            <Text style={{ fontFamily: 'bold', color: COLORS.lightWhite, }}>View Store</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.container}>
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+          <Text style={styles.title}>{item?.title}</Text>
+          <Text style={[styles.title, { color: COLORS.primary }]}>₦{(item?.price + totalPrice) * count}</Text>
+
+        </View>
+        <Text style={styles.small}>{item?.description}</Text>
+
       </View>
     </View>
   )
@@ -52,6 +68,29 @@ const styles = StyleSheet.create({
     right: 0,
     zIndex: 999,
     position: 'absolute',
-    top: SIZES.xxLarge,
-  }
+    top: SIZES.xxLarge + 3,
+  },
+  restBtn: {
+    borderColor: COLORS.primary,
+    borderWidth: 1,
+    borderRadius: 15,
+    padding: 10,
+    marginRight: 10,
+    backgroundColor: COLORS.primary
+  },
+  container: {
+    marginHorizontal: 12,
+    marginTop: 10,
+  },
+  title: {
+    fontSize: 22,
+    fontFamily: "medium",
+    color: COLORS.black,
+  },
+  small: {
+    fontSize: 13,
+    fontFamily: "regular",
+    color: COLORS.gray,
+    textAlign: "justify",
+  },
 })
