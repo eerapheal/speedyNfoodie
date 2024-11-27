@@ -1,8 +1,11 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native'
 import React, { useContext, useState } from 'react'
 import { CartCountContext } from '../context/CartCountContext';
 import { COLORS, SIZES } from '../constants/theme';
 import { Ionicons, MaterialCommunityIcons } from '@expo/vector-icons';
+import { FlatList } from 'react-native-web';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
+import Counter from '../components/Counter';
 
 const FoodPage = ({ route, navigation }) => {
   const item = route.params.item;
@@ -11,7 +14,7 @@ const FoodPage = ({ route, navigation }) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [restaurant, setRestaurant] = useState(1);
   const [count, setCount] = useState(1);
-  const [preferences, setPreferences] = useState('');
+  const [preference, setPreference] = useState('');
   // const { cartCount, setCartCount } = useContext(CartCountContext);
 
   return (
@@ -47,6 +50,57 @@ const FoodPage = ({ route, navigation }) => {
         </View>
         <Text style={styles.small}>{item?.description}</Text>
 
+        <FlatList
+          data={item?.foodTags}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={(item) => item}
+          horizontal
+          scrollEnabled
+          style={{ marginTop: 8 }}
+          renderItem={({ item }) => (
+            <View style={styles.tags}>
+              <Text style={{ paddingHorizontal: 8, paddingVertical: 8, color: COLORS.lightWhite }}>{item}</Text>
+            </View>
+          )}
+        />
+        <Text style={[styles.title, { marginBottom: 5, marginTop: 20 }]}>Additives and Toppings</Text>
+        <FlatList
+          data={item.additives}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={(item) => item.id}
+          scrollEnabled={false}
+          style={{ marginTop: 10 }}
+          renderItem={({ item }) => (
+            <View style={{ flexDirection: "row", justifyContent: "space-between", marginBottom: 10, alignItems: 'center' }}>
+
+              <BouncyCheckbox
+                size={20}
+                unfillColor='#FFFFFF'
+                fillColor={COLORS.primary}
+                innerIconStyle={styles.small}
+                text={item.title}
+              />
+              <Text style={styles.small}>₦{item.price}</Text>
+            </View>
+          )}
+        />
+        <Text style={[styles.title, { marginBottom: 5, marginTop: 20 }]}>Preferences</Text>
+        <View style={styles.input}>
+          <TextInput
+            style={{ flex: 1, borderWidth: "none" }}
+            placeholder="Add your preferences here"
+            onChangeText={(value) => setPreference(value)}
+            value={preference}
+            autoCapitalize={'none'}
+            autocorrect={false}
+          />
+        </View>
+        <View style={{ flexDirection: "row", justifyContent: "space-between", marginTop: 10 }}>
+          <Text style={[styles.title, { marginBottom: 10 }]}>
+            Quantity
+          </Text>
+          <Counter count={count} setCount={setCount}/>
+        </View>
       </View>
     </View>
   )
@@ -79,7 +133,7 @@ const styles = StyleSheet.create({
     backgroundColor: COLORS.primary
   },
   container: {
-    marginHorizontal: 12,
+    marginHorizontal: 10,
     marginTop: 10,
   },
   title: {
@@ -93,4 +147,19 @@ const styles = StyleSheet.create({
     color: COLORS.gray,
     textAlign: "justify",
   },
+  tags: {
+    right: 10,
+    marginHorizontal: 8,
+    backgroundColor: COLORS.primary,
+    borderRadius: 8
+  },
+  input: {
+    borderColor: COLORS.primary,
+    borderWidth: 1,
+    borderRadius: 8,
+    height: 50,
+    paddingHorizontal: 12,
+    flexDirection: 'row',
+    backgroundColor: COLORS.offwhite,
+  }
 })
