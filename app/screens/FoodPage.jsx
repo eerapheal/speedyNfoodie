@@ -28,6 +28,18 @@ const FoodPage = ({ route, navigation }) => {
     })
   }
 
+  const handlePress = (item) => {
+    const cartItem = {
+      productId: item._Id,
+      additives: additives,
+      quantity: count,
+      totalPrice: (item.price + totalPrice) * count
+    }
+    addToCart(cartItem)
+  };
+
+  const addToCart = async (cartItem) => { }
+
   useEffect(() => {
     calculateAdditivePrice();
   }, [additives]);
