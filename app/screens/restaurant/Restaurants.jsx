@@ -35,7 +35,7 @@ const Restaurants = ({ navigation }) => {
               bordered={false}
               color={COLORS.lightWhite}
             />
-            <TouchableOpacity style={styles.ratingBtn} onPress={() => { }}>
+            <TouchableOpacity style={styles.ratingBtn} onPress={() => navigation.navigate("rating")}>
               <Text style={styles.ratingText}>Rate Store</Text>
             </TouchableOpacity>
           </View>

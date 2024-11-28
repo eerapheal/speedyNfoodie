@@ -10,7 +10,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import ReusableHeader from "../components/ReusableHeader";
 import { RatingInput, Rating } from "react-native-stock-star-rating";
 import { COLORS, SIZES } from "../constants/theme";
-import { AssetImage } from "../components";
+import AssetImage from "../components/AssetImage";
 
 const AddRating = () => {
   const [rating, setRating] = useState(0);
@@ -18,7 +18,7 @@ const AddRating = () => {
     <SafeAreaView style={{ height: SIZES.height }}>
       <Image
         source={{
-          uri: "https://d326fntlu7tb1e.cloudfront.net/uploads/2d5faf00-e235-4a78-9688-ad4d3280ec03-rating_bk.jpg",
+          uri: "https://4.bp.blogspot.com/-lYWdESTawXs/Vwz88mGq3UI/AAAAAAAABeQ/_I5FVlZ6ZNYyCVGGcNMLCOepVvRvmkVAgCLcB/s1600/fastfood.jpg",
         }}
         style={StyleSheet.absoluteFillObject}
         blurRadius={30}

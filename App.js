@@ -13,6 +13,7 @@ import { UserReversedGeoCode } from "./app/context/UserReversedGeoCode";
 import FoodNavigate from "./app/navigation/FoodNavigate";
 import RestaurantNavigation from "./app/navigation/RestaurantNavigation";
 import Restaurants from "./app/screens/restaurant/Restaurants";
+import AddRating from "./app/screens/AddRating";
 
 export default function App() {
   const [location, setLocation] = useState(null);
@@ -90,6 +91,11 @@ export default function App() {
             <Stack.Screen
             name="restaurant"
             component={Restaurants}
+            options={{ headerShown: false }}
+          />
+            <Stack.Screen
+            name="rating"
+            component={AddRating}
             options={{ headerShown: false }}
           />
           </Stack.Navigator>
