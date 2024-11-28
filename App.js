@@ -10,7 +10,7 @@ import BottomTab from "./app/navigation/BottomTab";
 const Stack = createNativeStackNavigator();
 import { UserLocationContext } from "./app/context/UserLocationContext";
 import { UserReversedGeoCode } from "./app/context/UserReversedGeoCode";
-import FoodNavigate from "./app/components/FoodNavigate";
+import FoodNavigate from "./app/navigation/FoodNavigate";
 
 export default function App() {
   const [location, setLocation] = useState(null);
