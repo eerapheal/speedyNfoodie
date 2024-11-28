@@ -11,6 +11,7 @@ const Stack = createNativeStackNavigator();
 import { UserLocationContext } from "./app/context/UserLocationContext";
 import { UserReversedGeoCode } from "./app/context/UserReversedGeoCode";
 import FoodNavigate from "./app/navigation/FoodNavigate";
+import RestaurantNavigation from "./app/navigation/RestaurantNavigation";
 
 export default function App() {
   const [location, setLocation] = useState(null);
@@ -80,6 +81,11 @@ export default function App() {
               component={FoodNavigate}
               options={{ headerShown: false }}
             />
+            <Stack.Screen
+            name="restaurant-nav"
+            component={RestaurantNavigation}
+            options={{ headerShown: false }}
+          />
           </Stack.Navigator>
         </NavigationContainer>
       </UserReversedGeoCode.Provider>
