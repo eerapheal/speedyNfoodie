@@ -1,6 +1,6 @@
 import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import FoodComponent from './foodComponent'
+import FoodComponent from './FoodComponent'
 import uidata from '../constants/uidata'
 
 const NearestRestaurants = () => {
