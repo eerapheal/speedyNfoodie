@@ -16,7 +16,7 @@ const navigation = useNavigation();
         style={{ marginTop: 5, rowGap: 10 }}
         scrollEnabled
         renderItem={({ item }) => (
-          <StoreComponent item={item} onPress={() => navigation.navigate("restaurant-nav", {item})}/>
+          <StoreComponent item={item} onPress={() => navigation.navigate("restaurant", item)}/>
         )}
       />
     </View>
