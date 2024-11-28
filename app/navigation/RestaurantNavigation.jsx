@@ -10,9 +10,14 @@ const SecondRoute = () => (
     <View style={{ flex: 1, backgroundColor: "#673ab7" }} />
 )
 
+const ThirdRoute = () => (
+    <View style={{ flex: 1, backgroundColor: "#673ab0" }} />
+)
+
 const renderScene = SceneMap({
     first: FirstRoute,
     second: SecondRoute,
+    third: ThirdRoute,
 });
 
 
@@ -21,8 +26,9 @@ const RestaurantNavigation = () => {
 
     const [index, setIndex] = React.useState(0);
     const [routes] = React.useState([
-        { key: 'first', title: 'First' },
-        { key: 'second', title: 'Second' },
+        { key: 'first', title: 'Menu' },
+        { key: 'second', title: 'Direction' },
+        { key: 'third', title: 'New' },
     ]);
 
     return (
