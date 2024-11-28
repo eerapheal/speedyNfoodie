@@ -17,6 +17,9 @@ const FoodPage = ({ route, navigation }) => {
   const [preference, setPreference] = useState('');
   // const { cartCount, setCartCount } = useContext(CartCountContext);
 
+  let sendToOrderPage;
+  const id = item.restaurant;
+
   const handleAdditives = (newAdditive) => {
     setAdditives((prevAdditives) => {
       const exists = prevAdditives.some((additive) => additive.id === newAdditive.id);
@@ -37,6 +40,20 @@ const FoodPage = ({ route, navigation }) => {
     }
     addToCart(cartItem)
   };
+
+  sendToOrderPage = {
+    orderItem: {
+      foodId: item._Id,
+      additives: additives,
+      quantity: count,
+      price: (item.price + totalPrice) * count,
+      instruction: preference
+    },
+    title: item.title,
+    description: item.description,
+    imageUrl: item.imageUrl[0],
+    restaurant: id
+  }
 
   const addToCart = async (cartItem) => { }
 
